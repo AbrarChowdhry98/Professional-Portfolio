@@ -3,7 +3,7 @@
 "use client";
 
 import { css } from "@emotion/react";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { ProjectItem } from "@/lib/types";
@@ -14,12 +14,6 @@ import Project from "./Project";
 const PAGE_SIZE = 4;
 
 const styles = {
-  section: css({
-    width: "100%",
-    maxWidth: theme.maxWidth,
-    margin: "0 auto",
-    padding: theme.sectionPadding,
-  }),
   header: css({
     display: "flex",
     justifyContent: "space-between",
@@ -30,19 +24,6 @@ const styles = {
       flexDirection: "column",
       alignItems: "flex-start",
     },
-  }),
-  heading: css({
-    fontSize: "clamp(1.5rem, 3vw, 2rem)",
-    fontWeight: 800,
-    color: theme.colors.text,
-    marginBottom: 8,
-    textAlign: "left",
-  }),
-  subtext: css({
-    fontSize: 14,
-    color: theme.colors.textMuted,
-    textAlign: "left",
-    maxWidth: 400,
   }),
   navButtons: css({
     display: "flex",
@@ -73,26 +54,40 @@ const styles = {
   grid: css({
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
-    gridTemplateRows: "repeat(3, minmax(200px, 220px))",
     gap: 16,
     [Breakpoints.md]: {
       gridTemplateColumns: "1fr",
+    },
+  }),
+  gridPreview: css({
+    gridTemplateRows: "repeat(3, minmax(200px, 220px))",
+    [Breakpoints.md]: {
       gridTemplateRows: "repeat(4, minmax(200px, auto))",
     },
+  }),
+  gridFull: css({
+    gridTemplateRows: "repeat(auto-fill, minmax(200px, 220px))",
   }),
 };
 
 interface Props {
   projects: ProjectItem[];
+  limit?: number;
 }
 
-const Projects = ({ projects }: Props) => {
+const Projects = ({ projects, limit }: Props) => {
   const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(projects.length / PAGE_SIZE);
-  const visibleProjects = projects.slice(
-    page * PAGE_SIZE,
-    page * PAGE_SIZE + PAGE_SIZE
-  );
+  const isPreview = limit !== undefined;
+  const pageSize = limit ?? PAGE_SIZE;
+  const totalPages = Math.ceil(projects.length / pageSize);
+
+  const visibleProjects = useMemo(() => {
+    if (isPreview) {
+      return projects.slice(0, limit);
+    }
+
+    return projects.slice(page * pageSize, page * pageSize + pageSize);
+  }, [isPreview, limit, page, pageSize, projects]);
 
   const goPrev = useCallback(() => {
     setPage((current) => Math.max(0, current - 1));
@@ -103,17 +98,10 @@ const Projects = ({ projects }: Props) => {
   }, [totalPages]);
 
   return (
-    <section id="work" css={styles.section}>
-      <div css={styles.header}>
-        <div>
-          <h2 css={styles.heading}>Projects</h2>
-          <p css={styles.subtext}>
-            Product work at JELD-WEN — sales and customer iOS apps plus the
-            Canada website — alongside earlier full-stack projects on GitHub.
-          </p>
-        </div>
-
-        {totalPages > 1 && (
+    <>
+      {!isPreview && totalPages > 1 && (
+        <div css={styles.header}>
+          <div />
           <div css={styles.navButtons}>
             <button
               type="button"
@@ -134,15 +122,20 @@ const Projects = ({ projects }: Props) => {
               <ArrowForwardRoundedIcon fontSize="small" />
             </button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      <div css={styles.grid}>
+      <div
+        css={css([
+          styles.grid,
+          isPreview ? styles.gridPreview : styles.gridFull,
+        ])}
+      >
         {visibleProjects.map((project, index) => (
           <Project project={project} index={index} key={project.id} />
         ))}
       </div>
-    </section>
+    </>
   );
 };
 

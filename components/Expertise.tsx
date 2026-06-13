@@ -161,30 +161,51 @@ function aggregateKeywords(projects: ProjectItem[]): string[] {
 
 interface Props {
   projects: ProjectItem[];
+  preview?: boolean;
+  embedded?: boolean;
 }
 
-const Expertise = ({ projects }: Props) => {
+const Expertise = ({ projects, preview = false, embedded = false }: Props) => {
   const topKeywords = useMemo(() => aggregateKeywords(projects), [projects]);
   const keywordSummary = topKeywords.slice(0, 4).join(", ");
+  const visibleSkillBars = preview ? skillBars.slice(0, 2) : skillBars;
+  const visibleCards = preview ? expertiseCards.slice(0, 2) : expertiseCards;
 
-  return (
-    <section id="expertise" css={styles.section}>
-      <div css={styles.grid}>
+  const content = (
+    <div css={styles.grid}>
         <div>
-          <h2 css={styles.heading}>Skills & Expertise</h2>
-          <p css={styles.description}>
-            A blend of product thinking, marketing strategy, and hands-on
-            delivery — from defining digital product direction to shipping mobile
-            apps and enterprise web platforms at JELD-WEN.
-            {keywordSummary && (
-              <>
-                {" "}
-                Core technologies include {keywordSummary}.
-              </>
-            )}
-          </p>
+          {!preview && !embedded && (
+            <>
+              <h2 css={styles.heading}>Skills & Expertise</h2>
+              <p css={styles.description}>
+                A blend of product thinking, marketing strategy, and hands-on
+                delivery — from defining digital product direction to shipping
+                mobile apps and enterprise web platforms at JELD-WEN.
+                {keywordSummary && (
+                  <>
+                    {" "}
+                    Core technologies include {keywordSummary}.
+                  </>
+                )}
+              </p>
+            </>
+          )}
 
-          {skillBars.map(({ name, value }) => (
+          {embedded && !preview && keywordSummary && (
+            <p css={css([styles.description, { marginBottom: 36 }])}>
+              Core technologies include {keywordSummary}.
+            </p>
+          )}
+
+          {preview && (
+            <p css={css([styles.description, { marginBottom: 36 }])}>
+              Product strategy, technical delivery, and digital marketing — with
+              hands-on work across Sitecore, Next.js, SwiftUI, and the MERN
+              stack.
+            </p>
+          )}
+
+          {visibleSkillBars.map(({ name, value }) => (
             <div key={name} css={styles.skill}>
               <div css={styles.skillHeader}>
                 <span css={styles.skillName}>{name}</span>
@@ -198,7 +219,7 @@ const Expertise = ({ projects }: Props) => {
         </div>
 
         <div css={styles.cardsGrid}>
-          {expertiseCards.map(({ icon: Icon, title, description }) => (
+          {visibleCards.map(({ icon: Icon, title, description }) => (
             <div key={title} css={styles.card}>
               <Icon css={styles.cardIcon} />
               <div css={styles.cardTitle}>{title}</div>
@@ -207,6 +228,15 @@ const Expertise = ({ projects }: Props) => {
           ))}
         </div>
       </div>
+  );
+
+  if (embedded) {
+    return content;
+  }
+
+  return (
+    <section id="expertise" css={styles.section}>
+      {content}
     </section>
   );
 };

@@ -90,9 +90,15 @@ const styles = {
 const navItems = [
   { name: "Home", href: "/", match: (path: string) => path === "/" },
   {
+    name: "Experience",
+    href: "/experience",
+    match: (path: string) => path.startsWith("/experience"),
+  },
+  {
     name: "Work",
-    href: "/#work",
-    match: (path: string) => path.startsWith("/project/"),
+    href: "/work",
+    match: (path: string) =>
+      path.startsWith("/work") || path.startsWith("/project/"),
   },
   {
     name: "Contact",

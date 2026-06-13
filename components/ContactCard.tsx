@@ -35,6 +35,12 @@ const styles = {
     lineHeight: 1.2,
     maxWidth: 560,
   }),
+  titleHighlight: css({
+    color: theme.colors.bg,
+    fontStyle: "italic",
+    fontWeight: 700,
+    opacity: 0.95,
+  }),
   subtext: css({
     fontSize: 15,
     color: "rgba(255, 255, 255, 0.85)",
@@ -59,6 +65,22 @@ const styles = {
   }),
 };
 
+function highlightTitle(title: string) {
+  const parts = title.split(/(\*[^*]+\*)/g);
+
+  return parts.map((part, index) => {
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <span key={index} css={styles.titleHighlight}>
+          {part.slice(1, -1)}
+        </span>
+      );
+    }
+
+    return <span key={index}>{part}</span>;
+  });
+}
+
 interface Props {
   contact: ContactInformationContent;
 }
@@ -67,7 +89,7 @@ const ContactCard = ({ contact }: Props) => {
   return (
     <section css={styles.section}>
       <div css={styles.banner}>
-        <h2 css={styles.title}>{contact.title}</h2>
+        <h2 css={styles.title}>{highlightTitle(contact.title)}</h2>
         <p css={styles.subtext}>{contact.subHeading}</p>
         <Link href="/contact" css={styles.button}>
           Get in Touch

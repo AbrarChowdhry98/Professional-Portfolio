@@ -1,6 +1,7 @@
 import {
   BannerContent,
   ContactInformationContent,
+  ExperienceItem,
   ProjectItem,
   SocialLinkItem,
 } from "./types";
@@ -354,6 +355,106 @@ const projects: ProjectItem[] = [
   },
 ];
 
+const experience: ExperienceItem[] = [
+  {
+    id: "jeld-wen",
+    company: "JELD-WEN of Canada",
+    location: "Mississauga, Ontario · Hybrid",
+    workType: "Permanent Full-time",
+    featured: true,
+    roles: [
+      {
+        title: "Retail Marketing Specialist",
+        period: "Jan 2024 - Present",
+        duration: "2 yrs 6 mos",
+        highlights: [
+          "Designed, developed, and maintained the company website and digital platforms — coding front-end components and leading stack upgrades for performance, scalability, and long-term maintainability.",
+          "Built and optimized digital experiences across the public website and internal mobile apps, supporting sales enablement, product education, and customer engagement.",
+          "Created and managed digital content and marketing assets for web and in-store use, ensuring brand consistency and strong customer touchpoints.",
+          "Collaborated with sales, IT, product, and retail teams to align digital initiatives with business and merchandising goals.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "4s-consulting",
+    company: "4S Consulting Services Inc.",
+    location: "Markham, Ontario · Hybrid",
+    workType: "Permanent Full-time",
+    roles: [
+      {
+        title: "Marketing And Business Development Coordinator",
+        period: "Apr 2023 - Jan 2024",
+        duration: "10 mos",
+        highlights: [
+          "Developed and qualified leads through generation campaigns to drive new sales opportunities.",
+          "Analyzed campaign results, conversion rates, and online traffic to improve future marketing strategy.",
+          "Supported content development and channel planning across web, social, and traditional marketing.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "burlington-economic-development",
+    company: "Burlington Economic Development",
+    location: "Burlington, Ontario",
+    workType: "Contract Full-time",
+    roles: [
+      {
+        title: "Marketing And Business Development Coordinator",
+        period: "Feb 2022 - Mar 2023",
+        duration: "1 yr 2 mos",
+        highlights: [
+          "Assessed client business models and marketing strategies; connected businesses to programs and targeted recommendations.",
+          "Implemented My Main Street Accelerator programming locally, including contribution applications and local business recruitment.",
+        ],
+      },
+      {
+        title: "Digital Service Squad Team Member",
+        period: "Sep 2020 - Feb 2022",
+        duration: "1 yr 6 mos",
+        highlights: [
+          "Delivered one-on-one digital transformation consulting to locally owned businesses — websites, social media, e-commerce, and operational technology.",
+          "Supported digital literacy assessments, training programs, and hands-on guidance for growing local business presence.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "caiden-media",
+    company: "Caiden Media",
+    location: "Toronto, Ontario",
+    workType: "Internship",
+    roles: [
+      {
+        title: "Digital Marketing Intern",
+        period: "Jul 2020 - Sep 2020",
+        duration: "3 mos",
+        highlights: [
+          "Created social content for Facebook, Twitter, and Instagram while supporting client digital dashboards.",
+          "Monitored SEO and campaign performance using Moz and related analytics tooling.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "boathouse",
+    company: "Boathouse / Blackwell Supply Company",
+    location: "St. Catharines, Ontario",
+    workType: "Internship",
+    roles: [
+      {
+        title: "Student Consultant — Strategic Management",
+        period: "Jan 2020 - Apr 2020",
+        duration: "4 mos",
+        highlights: [
+          "Collaborated on communication, marketing, and acquisition strategies aligned with the client's organizational goals.",
+        ],
+      },
+    ],
+  },
+];
+
 export async function getBanner(): Promise<BannerContent> {
   return banner;
 }
@@ -364,6 +465,10 @@ export async function getProfilePictureUrl(): Promise<string> {
 
 export async function getContactInformation(): Promise<ContactInformationContent> {
   return contact;
+}
+
+export async function getExperience(): Promise<ExperienceItem[]> {
+  return experience;
 }
 
 export async function getProjects(): Promise<ProjectItem[]> {

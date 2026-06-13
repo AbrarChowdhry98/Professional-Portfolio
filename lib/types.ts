@@ -52,3 +52,19 @@ export type ContactInformationContent = {
   subHeading: string;
   socialLinks: SocialLinkItem[];
 };
+
+export type ExperienceRole = {
+  title: string;
+  period: string;
+  duration: string;
+  highlights: string[];
+};
+
+export type ExperienceItem = {
+  id: string;
+  company: string;
+  location?: string;
+  workType?: string;
+  featured?: boolean;
+  roles: ExperienceRole[];
+};

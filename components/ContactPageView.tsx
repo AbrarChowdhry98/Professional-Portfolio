@@ -21,6 +21,8 @@ import Footer from "./Footer";
 const styles = {
   page: css({
     width: "100%",
+    backgroundColor: theme.colors.bg,
+    minHeight: "100vh",
   }),
   section: css({
     width: "100%",
@@ -103,6 +105,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     gap: 8,
+    textDecoration: "none",
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
     ":hover": {
       transform: "translateY(-2px)",
@@ -168,16 +171,12 @@ const styles = {
     },
   }),
   infoRow: css({
-    position: "relative",
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)",
     gap: 32,
     marginTop: 56,
-    paddingRight: 180,
-    [Breakpoints.md]: {
-      paddingRight: 0,
-      gridTemplateColumns: "repeat(3, 1fr)",
-    },
+    paddingTop: 40,
+    borderTop: `1px solid ${theme.colors.border}`,
     [Breakpoints.sm]: {
       gridTemplateColumns: "1fr",
       gap: 28,
@@ -199,65 +198,6 @@ const styles = {
     fontSize: 15,
     fontWeight: 600,
     color: theme.colors.text,
-  }),
-  deco: css({
-    position: "absolute",
-    right: 0,
-    bottom: -24,
-    width: 160,
-    height: 140,
-    pointerEvents: "none",
-    [Breakpoints.md]: {
-      display: "none",
-    },
-  }),
-  decoPlatform: css({
-    position: "absolute",
-    bottom: 0,
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: 120,
-    height: 8,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
-    borderRadius: 2,
-    boxShadow: "0 4px 20px rgba(255, 255, 255, 0.15)",
-  }),
-  decoBlock: css({
-    position: "absolute",
-    bottom: 12,
-    left: "50%",
-    transform: "translateX(-50%) rotateX(12deg) rotateY(-18deg)",
-    width: 80,
-    height: 90,
-    background:
-      "linear-gradient(135deg, rgba(79, 209, 197, 0.25) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(79, 209, 197, 0.15) 100%)",
-    border: "1px solid rgba(79, 209, 197, 0.35)",
-    borderRadius: 4,
-    backdropFilter: "blur(4px)",
-    boxShadow:
-      "inset 0 0 20px rgba(79, 209, 197, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4)",
-    "::before": {
-      content: '""',
-      position: "absolute",
-      top: 16,
-      left: 12,
-      right: 12,
-      height: 2,
-      backgroundColor: "rgba(79, 209, 197, 0.5)",
-      borderRadius: 1,
-    },
-    "::after": {
-      content: '""',
-      position: "absolute",
-      bottom: 20,
-      left: 16,
-      right: 16,
-      height: 24,
-      background:
-        "repeating-linear-gradient(90deg, rgba(79, 209, 197, 0.3) 0px, rgba(79, 209, 197, 0.3) 4px, transparent 4px, transparent 8px)",
-      borderRadius: 2,
-      opacity: 0.6,
-    },
   }),
 };
 
@@ -301,6 +241,16 @@ function resolveHref(link: string, iconName: string): string {
 function findDirectContact(
   socialLinks: ContactInformationContent["socialLinks"]
 ): { href: string; label: string } {
+  const emailLink = socialLinks.find((link) => {
+    const key = link.iconName.toLowerCase().replace(/[^a-z]/g, "");
+    return key === "email" || key === "envelope" || key === "faenvelope";
+  });
+
+  if (emailLink) {
+    const email = emailLink.link.replace(/^mailto:/i, "");
+    return { href: `mailto:${email}`, label: email };
+  }
+
   const linkedIn = socialLinks.find((link) =>
     link.iconName.toLowerCase().includes("linkedin")
   );
@@ -312,19 +262,9 @@ function findDirectContact(
     };
   }
 
-  const emailLink = socialLinks.find((link) => {
-    const key = link.iconName.toLowerCase().replace(/[^a-z]/g, "");
-    return key === "email" || key === "envelope" || key === "faenvelope";
-  });
-
-  if (emailLink) {
-    const email = emailLink.link.replace(/^mailto:/i, "");
-    return { href: `mailto:${email}`, label: email };
-  }
-
   return {
-    href: "https://www.linkedin.com/in/abrar-chowdhry/",
-    label: "linkedin.com/in/abrar-chowdhry",
+    href: "mailto:abrarchowdhry98@gmail.com",
+    label: "abrarchowdhry98@gmail.com",
   };
 }
 
@@ -407,11 +347,6 @@ const ContactPageView = ({ contact }: Props) => {
               <span css={styles.infoValue}>{value}</span>
             </div>
           ))}
-
-          <div css={styles.deco} aria-hidden="true">
-            <div css={styles.decoBlock} />
-            <div css={styles.decoPlatform} />
-          </div>
         </div>
       </section>
 
