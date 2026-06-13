@@ -4,6 +4,7 @@
 
 import { css } from "@emotion/react";
 import { useMemo } from "react";
+import { assetUrl } from "@/lib/assetUrl";
 import { Breakpoints } from "@/lib/utils/breakpoints";
 import { Gradients } from "@/lib/utils/Gradients";
 
@@ -46,7 +47,7 @@ const ProfilePictureCard = ({ imageSrc, gradient = Gradients.pink }: Props) => {
   return (
     <div css={styles.wrapper}>
       <img
-        src={imageSrc}
+        src={assetUrl(imageSrc)}
         alt="Profile"
         width="100%"
         height="100%"

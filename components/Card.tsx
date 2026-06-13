@@ -4,6 +4,7 @@
 
 import { ClassNames, css, SerializedStyles } from "@emotion/react";
 import { ReactNode, useMemo } from "react";
+import { assetUrl } from "@/lib/assetUrl";
 import { Breakpoints } from "@/lib/utils/breakpoints";
 import { Gradients } from "@/lib/utils/Gradients";
 import { Heading, HeadingLevel } from "@/lib/utils/Headings";
@@ -129,7 +130,7 @@ const Card = ({
             {subHeading && (
               <Heading headingLevel={subHeadingLevel}>{subHeading}</Heading>
             )}
-            {image && <img src={image} alt="" css={styles.image} />}
+            {image && <img src={assetUrl(image)} alt="" css={styles.image} />}
           </div>
           {renderNav && renderNav()}
         </div>

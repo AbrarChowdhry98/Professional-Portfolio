@@ -5,6 +5,7 @@
 import { css } from "@emotion/react";
 import Link from "next/link";
 import NorthEastRoundedIcon from "@mui/icons-material/NorthEastRounded";
+import { assetUrl } from "@/lib/assetUrl";
 import { ProjectItem } from "@/lib/types";
 import { theme } from "@/lib/theme";
 import { Breakpoints } from "@/lib/utils/breakpoints";
@@ -209,7 +210,7 @@ const Project = ({ project, index }: Props) => {
       {project.image && (
         <>
           <img
-            src={project.image}
+            src={assetUrl(project.image)}
             alt=""
             css={isAppProject ? styles.imageApp : styles.image}
             loading="lazy"

@@ -11,8 +11,6 @@ import {
   getProjects,
 } from "@/lib/contentful";
 
-export const revalidate = 3600;
-
 export default async function HomePage() {
   const [banner, contact, projects, profileImageUrl] = await Promise.all([
     getBanner(),

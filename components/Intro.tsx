@@ -4,6 +4,7 @@
 
 import { css } from "@emotion/react";
 import { BannerContent } from "@/lib/types";
+import { assetUrl } from "@/lib/assetUrl";
 import { theme } from "@/lib/theme";
 import { Breakpoints } from "@/lib/utils/breakpoints";
 
@@ -143,7 +144,7 @@ function highlightName(title: string) {
       </span>
     ) : (
       <span key={index}>{part}</span>
-    )
+    ),
   );
 }
 
@@ -169,7 +170,7 @@ const Intro = ({ banner, profileImageUrl }: Props) => {
           <div css={styles.portrait}>
             {profileImageUrl ? (
               <img
-                src={profileImageUrl}
+                src={assetUrl(profileImageUrl)}
                 alt="Abrar Chowdhry"
                 css={styles.portraitImage}
               />

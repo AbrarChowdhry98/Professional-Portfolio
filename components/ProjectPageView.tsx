@@ -21,6 +21,7 @@ import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import SmartToyOutlinedIcon from "@mui/icons-material/SmartToyOutlined";
+import { assetUrl } from "@/lib/assetUrl";
 import { ProjectItem, SocialLinkItem } from "@/lib/types";
 import { theme } from "@/lib/theme";
 import { Breakpoints } from "@/lib/utils/breakpoints";
@@ -693,7 +694,7 @@ const ProjectPageView = ({
               {project.image ? (
                 <>
                   <img
-                    src={project.image}
+                    src={assetUrl(project.image)}
                     alt={project.title}
                     css={styles.heroImage}
                   />
@@ -812,7 +813,7 @@ const ProjectPageView = ({
           {project.image && !isAppProject && (
             <div css={styles.scalabilityImage}>
               <img
-                src={project.image}
+                src={assetUrl(project.image)}
                 alt=""
                 css={styles.scalabilityImg}
                 aria-hidden
@@ -823,7 +824,7 @@ const ProjectPageView = ({
           {isAppProject && project.image && (
             <div css={styles.appSideImage}>
               <img
-                src={project.gallery?.[4]?.src ?? project.image}
+                src={assetUrl(project.gallery?.[4]?.src ?? project.image)}
                 alt=""
                 css={{ width: "100%", height: "auto", display: "block" }}
                 aria-hidden

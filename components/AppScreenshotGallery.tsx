@@ -3,6 +3,7 @@
 "use client";
 
 import { css } from "@emotion/react";
+import { assetUrl } from "@/lib/assetUrl";
 import { ProjectGalleryItem } from "@/lib/types";
 import { theme } from "@/lib/theme";
 import { Breakpoints } from "@/lib/utils/breakpoints";
@@ -105,7 +106,7 @@ export const AppGallerySection = ({ gallery, subtext }: GalleryProps) => (
       {gallery.map(({ src, caption }) => (
         <div key={src} css={styles.galleryItem}>
           <div css={styles.galleryPhone}>
-            <img src={src} alt={caption} css={styles.screenshot} />
+            <img src={assetUrl(src)} alt={caption} css={styles.screenshot} />
           </div>
           <div css={styles.caption}>{caption}</div>
         </div>

@@ -18,11 +18,11 @@ Design direction inspired by [portfolio-v2](https://github.com/iqtedar123/portfo
 
 ## Featured Work
 
-| Project | Type | Description |
-| --- | --- | --- |
-| [JW Sales Hub](https://apps.apple.com/ca/app/jw-sales-hub/id6777043303) | Native iOS | Sales rep app with interior door quoting, digital business cards, event lead capture, VR demos, and field-ready offline support |
-| [JELD-WEN of Canada](https://apps.apple.com/ca/app/jeld-wen-of-canada/id6778148094) | Native iOS | Customer-facing app for product discovery, configurators, resources, bilingual support, and AI chatbot |
-| [JELD-WEN Canada Website](https://www.jeld-wen.ca/en-ca/) | Web Platform | Enterprise marketing site on Sitecore XM Cloud with a Next.js front end, GraphQL content, and performance-focused delivery |
+| Project                                                                             | Type         | Description                                                                                                                     |
+| ----------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| [JW Sales Hub](https://apps.apple.com/ca/app/jw-sales-hub/id6777043303)             | Native iOS   | Sales rep app with interior door quoting, digital business cards, event lead capture, VR demos, and field-ready offline support |
+| [JELD-WEN of Canada](https://apps.apple.com/ca/app/jeld-wen-of-canada/id6778148094) | Native iOS   | Customer-facing app for product discovery, configurators, resources, bilingual support, and AI chatbot                          |
+| [JELD-WEN Canada Website](https://www.jeld-wen.ca/en-ca/)                           | Web Platform | Enterprise marketing site on Sitecore XM Cloud with a Next.js front end, GraphQL content, and performance-focused delivery      |
 
 Additional projects from full-stack certification work (Node.js, React, MongoDB, and more) are included in the portfolio grid.
 
@@ -30,13 +30,13 @@ Additional projects from full-stack certification work (Node.js, React, MongoDB,
 
 ## Tech Stack
 
-| Layer | Technologies |
-| --- | --- |
-| Framework | [Next.js 15](https://nextjs.org/) (App Router) |
-| Language | TypeScript |
-| Styling | [Emotion](https://emotion.sh/) |
-| Icons | MUI Icons, Font Awesome |
-| Content | Local data module (`lib/contentful.ts`) |
+| Layer      | Technologies                                             |
+| ---------- | -------------------------------------------------------- |
+| Framework  | [Next.js 15](https://nextjs.org/) (App Router)           |
+| Language   | TypeScript                                               |
+| Styling    | [Emotion](https://emotion.sh/)                           |
+| Icons      | MUI Icons, Font Awesome                                  |
+| Content    | Local data module (`lib/contentful.ts`)                  |
 | Deployment | Vercel, Firebase Hosting, or any Next.js-compatible host |
 
 ---
@@ -97,16 +97,16 @@ npm run lint
 
 All portfolio content is edited in **`lib/contentful.ts`** (local data — not connected to Contentful CMS):
 
-| Content | What to edit |
-| --- | --- |
-| Hero / intro copy | `banner` object |
-| Projects | `projects` array — title, description, keywords, links, images |
-| App screenshots | `gallery` array on app projects |
-| Feature cards | `features` array per project |
-| Spotlight section | `spotlight.heading` and `spotlight.text` |
-| Stat highlights | `highlights.primary` and `highlights.secondary` |
-| Social links | `socialLinks` in contact config |
-| Contact section | `contact` object |
+| Content           | What to edit                                                   |
+| ----------------- | -------------------------------------------------------------- |
+| Hero / intro copy | `banner` object                                                |
+| Projects          | `projects` array — title, description, keywords, links, images |
+| App screenshots   | `gallery` array on app projects                                |
+| Feature cards     | `features` array per project                                   |
+| Spotlight section | `spotlight.heading` and `spotlight.text`                       |
+| Stat highlights   | `highlights.primary` and `highlights.secondary`                |
+| Social links      | `socialLinks` in contact config                                |
+| Contact section   | `contact` object                                               |
 
 ### Adding a new project
 
@@ -137,13 +137,47 @@ App projects support optional structured content:
 
 ## Deployment
 
-This is a standard Next.js app and deploys cleanly to:
+### GitHub Pages (configured)
 
-- **[Vercel](https://vercel.com/)** — recommended; zero-config for Next.js
-- **Firebase Hosting** — with Next.js SSR adapter
-- **Any Node host** — run `npm run build && npm run start`
+This repo deploys automatically to GitHub Pages on every push to `main`.
 
-Ensure `public/` assets are included in the deployment. No environment variables are required for the current local-content setup.
+**Live site:** [https://abrarchowdhry98.github.io/Professional-Portfolio/](https://abrarchowdhry98.github.io/Professional-Portfolio/)
+
+#### How it works
+
+1. GitHub Actions runs `GITHUB_PAGES=true npm run build` (see `.github/workflows/deploy.yml`)
+2. Next.js exports a static site to the `out/` folder
+3. The workflow deploys that folder to GitHub Pages
+
+#### Enable Pages (one-time)
+
+If the site does not load after the first push:
+
+1. Open **Settings → Pages** on the GitHub repo
+2. Set **Source** to **GitHub Actions**
+3. Re-run the **Deploy to GitHub Pages** workflow from the Actions tab
+
+#### Local preview (production build)
+
+```bash
+GITHUB_PAGES=true npm run build
+npx serve out
+```
+
+Open the URL shown by `serve` (paths will include `/Professional-Portfolio`).
+
+#### Cleaner URL (optional)
+
+Rename the repo to `abrarchowdhry98.github.io` and update `repoName` in `next.config.ts` to serve at `https://abrarchowdhry98.github.io/`.
+
+### Other hosts
+
+The project also deploys to:
+
+- **[Vercel](https://vercel.com/)** — import the repo; use a normal `npm run build` without `GITHUB_PAGES`
+- **Any static host** — upload the contents of `out/` after `GITHUB_PAGES=true npm run build`
+
+No environment variables are required for the current local-content setup.
 
 ---
 
