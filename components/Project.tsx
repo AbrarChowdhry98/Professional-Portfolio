@@ -34,10 +34,10 @@ const layoutPatterns = [
 ];
 
 const accentOverlays = [
-  "rgba(79, 209, 197, 0.08)",
+  "rgba(20, 77, 107, 0.08)",
   "rgba(107, 70, 193, 0.1)",
-  "rgba(79, 209, 197, 0.06)",
-  "rgba(79, 209, 197, 0.14)",
+  "rgba(20, 77, 107, 0.06)",
+  "rgba(20, 77, 107, 0.14)",
 ];
 
 const styles = {
