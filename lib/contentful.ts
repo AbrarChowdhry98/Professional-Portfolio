@@ -265,28 +265,6 @@ const projects: ProjectItem[] = [
     ],
   },
   {
-    id: "social-network-api",
-    slug: "social-network-api",
-    title: "Social Network API",
-    description:
-      "A RESTful backend API for a social networking application with user authentication, friend connections, and activity feeds.\n\nBuilt during full-stack certification work using Node.js, Express, MongoDB, and JWT-based auth patterns.",
-    image: "/projects/Social-Network-API.png",
-    keywords: ["Node.js", "Express", "MongoDB", "REST", "JWT", "API"],
-    link: "https://github.com/AbrarChowdhry98/Social-Network-API",
-    rank: 4,
-  },
-  {
-    id: "abrar-store",
-    slug: "abrar-store",
-    title: "Abrar's Store",
-    description:
-      "An e-commerce web application with product browsing, cart management, and checkout flows.\n\nDemonstrates MERN-stack patterns for inventory display, client-side routing, and API integration.",
-    image: "/projects/Abrar-s-Store.jpg",
-    keywords: ["React", "Node.js", "MongoDB", "Express", "E-commerce"],
-    link: "https://github.com/AbrarChowdhry98/Abrar-s-Store",
-    rank: 5,
-  },
-  {
     id: "budget-tracker",
     slug: "budget-tracker",
     title: "Budget Tracker",
@@ -295,40 +273,7 @@ const projects: ProjectItem[] = [
     image: "/projects/Abrar-Budget-Tracker.png",
     keywords: ["JavaScript", "HTML", "CSS", "Local Storage"],
     link: "https://github.com/AbrarChowdhry98/Abrar-Budget-Tracker",
-    rank: 6,
-  },
-  {
-    id: "employee-tracker",
-    slug: "employee-tracker",
-    title: "Employee Tracker",
-    description:
-      "A command-line and web-based tool for managing employee records, departments, and roles.\n\nUses Node.js with MySQL for relational data storage and Inquirer for interactive CLI prompts.",
-    image: "/projects/Abrar-Employee-Tracker.png",
-    keywords: ["Node.js", "MySQL", "Inquirer", "CLI"],
-    link: "https://github.com/AbrarChowdhry98/Abrar-Employee-Tracker",
-    rank: 7,
-  },
-  {
-    id: "book-lookup",
-    slug: "book-lookup",
-    title: "Book Lookup",
-    description:
-      "A book search application that queries the Google Books API to find titles, authors, and descriptions.\n\nUsers can save books to a personal reading list with persistent storage.",
-    image: "/projects/Book-Lookup.png",
-    keywords: ["React", "Google Books API", "Node.js", "Express"],
-    link: "https://github.com/AbrarChowdhry98/Book-Lookup",
-    rank: 8,
-  },
-  {
-    id: "react-portfolio",
-    slug: "react-portfolio",
-    title: "React Portfolio",
-    description:
-      "An earlier React-based portfolio site showcasing projects, skills, and contact information.\n\nBuilt as part of the University of Toronto full-stack web development certificate.",
-    image: "/projects/abrar-react-portfolio.png",
-    keywords: ["React", "JavaScript", "CSS", "Portfolio"],
-    link: "https://github.com/AbrarChowdhry98/abrar-react-portfolio",
-    rank: 9,
+    rank: 4,
   },
   {
     id: "note-taker",
@@ -339,7 +284,7 @@ const projects: ProjectItem[] = [
     image: "/projects/abrar-note-Taker.png",
     keywords: ["Express", "Node.js", "REST", "JavaScript"],
     link: "https://github.com/AbrarChowdhry98/abrar-note-Taker",
-    rank: 10,
+    rank: 5,
   },
   {
     id: "weather-dashboard",
@@ -350,7 +295,7 @@ const projects: ProjectItem[] = [
     image: "/projects/Abrars-Weather-Dashboard.png",
     keywords: ["JavaScript", "OpenWeather API", "Bootstrap", "HTML"],
     link: "https://github.com/AbrarChowdhry98/Abrars-Weather-Dashboard",
-    rank: 11,
+    rank: 6,
   },
   {
     id: "code-quiz",
@@ -361,18 +306,7 @@ const projects: ProjectItem[] = [
     image: "/projects/Code-Quiz.png",
     keywords: ["JavaScript", "HTML", "CSS", "Quiz"],
     link: "https://github.com/AbrarChowdhry98/Code-Quiz",
-    rank: 12,
-  },
-  {
-    id: "work-day-scheduler",
-    slug: "work-day-scheduler",
-    title: "Work Day Scheduler",
-    description:
-      "An hourly planner for a standard work day with color-coded time blocks and persistent event storage.\n\nUses jQuery, Day.js, and local storage for a simple scheduling interface.",
-    image: "/projects/Work-day-scheduler.png",
-    keywords: ["jQuery", "Day.js", "HTML", "CSS"],
-    link: "https://github.com/AbrarChowdhry98/Work-day-scheduler",
-    rank: 13,
+    rank: 7,
   },
   {
     id: "password-generator",
@@ -383,7 +317,7 @@ const projects: ProjectItem[] = [
     image: "/projects/A-C-Password-Generator.png",
     keywords: ["JavaScript", "HTML", "CSS", "Security"],
     link: "https://github.com/AbrarChowdhry98/A-C-Password-Generator",
-    rank: 14,
+    rank: 8,
   },
   {
     id: "team-profile-generator",
@@ -394,18 +328,7 @@ const projects: ProjectItem[] = [
     image: "/projects/abrar-team-profile-generator.png",
     keywords: ["Node.js", "Inquirer", "HTML", "CLI"],
     link: "https://github.com/AbrarChowdhry98/abrar-team-profile-generator",
-    rank: 15,
-  },
-  {
-    id: "tech-blog",
-    slug: "tech-blog",
-    title: "Tech Blog",
-    description:
-      "A CMS-style tech blog built with Node.js and Handlebars templating.\n\nSupports creating, editing, and deleting posts with a MySQL database backend.",
-    image: "/projects/Abrar-Tech-Blog.png",
-    keywords: ["Node.js", "Express", "MySQL", "Handlebars"],
-    link: "https://github.com/AbrarChowdhry98/Abrar-Tech-Blog",
-    rank: 16,
+    rank: 9,
   },
   {
     id: "code-refactor",
@@ -416,7 +339,7 @@ const projects: ProjectItem[] = [
     image: "/projects/Code-Refactor.png",
     keywords: ["HTML", "CSS", "SEO", "Accessibility"],
     link: "https://github.com/AbrarChowdhry98/Code-Refactor",
-    rank: 17,
+    rank: 10,
   },
   {
     id: "readme-generator",
@@ -427,7 +350,7 @@ const projects: ProjectItem[] = [
     image: "/projects/Professional-Readme-Generator.png",
     keywords: ["Node.js", "Inquirer", "Markdown", "CLI"],
     link: "https://github.com/AbrarChowdhry98/Professional-Readme-Generator",
-    rank: 18,
+    rank: 11,
   },
 ];
 
