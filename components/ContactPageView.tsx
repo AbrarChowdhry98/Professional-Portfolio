@@ -106,7 +106,7 @@ const styles = {
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
     ":hover": {
       transform: "translateY(-2px)",
-      boxShadow: "0 12px 32px rgba(20, 77, 107, 0.25)",
+      boxShadow: "0 12px 32px rgba(79, 209, 197, 0.25)",
     },
   }),
   atSymbol: css({
@@ -162,7 +162,7 @@ const styles = {
     fontSize: 20,
     transition: "background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease",
     ":hover": {
-      backgroundColor: "rgba(20, 77, 107, 0.12)",
+      backgroundColor: "rgba(79, 209, 197, 0.12)",
       borderColor: theme.colors.accent,
       color: theme.colors.accent,
     },
@@ -230,12 +230,12 @@ const styles = {
     width: 80,
     height: 90,
     background:
-      "linear-gradient(135deg, rgba(20, 77, 107, 0.25) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(20, 77, 107, 0.15) 100%)",
-    border: "1px solid rgba(20, 77, 107, 0.35)",
+      "linear-gradient(135deg, rgba(79, 209, 197, 0.25) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(79, 209, 197, 0.15) 100%)",
+    border: "1px solid rgba(79, 209, 197, 0.35)",
     borderRadius: 4,
     backdropFilter: "blur(4px)",
     boxShadow:
-      "inset 0 0 20px rgba(20, 77, 107, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4)",
+      "inset 0 0 20px rgba(79, 209, 197, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4)",
     "::before": {
       content: '""',
       position: "absolute",
@@ -243,7 +243,7 @@ const styles = {
       left: 12,
       right: 12,
       height: 2,
-      backgroundColor: "rgba(20, 77, 107, 0.5)",
+      backgroundColor: "rgba(79, 209, 197, 0.5)",
       borderRadius: 1,
     },
     "::after": {
@@ -254,7 +254,7 @@ const styles = {
       right: 16,
       height: 24,
       background:
-        "repeating-linear-gradient(90deg, rgba(20, 77, 107, 0.3) 0px, rgba(20, 77, 107, 0.3) 4px, transparent 4px, transparent 8px)",
+        "repeating-linear-gradient(90deg, rgba(79, 209, 197, 0.3) 0px, rgba(79, 209, 197, 0.3) 4px, transparent 4px, transparent 8px)",
       borderRadius: 2,
       opacity: 0.6,
     },
