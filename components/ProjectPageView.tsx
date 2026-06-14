@@ -108,7 +108,7 @@ const styles = {
       bottom: 0,
       right: 0,
       width: 4,
-      background: "#6B46C1",
+      background: "#E85D04",
       zIndex: 1,
     },
   }),

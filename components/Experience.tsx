@@ -35,7 +35,7 @@ const styles = {
     borderRadius: "50%",
     backgroundColor: theme.colors.accent,
     flexShrink: 0,
-    boxShadow: `0 0 0 4px rgba(79, 209, 197, 0.12)`,
+    boxShadow: `0 0 0 4px rgba(245, 185, 66, 0.12)`,
   }),
   markerLine: css({
     flex: 1,
@@ -52,14 +52,14 @@ const styles = {
     textAlign: "left",
     transition: "border-color 0.2s ease",
     ":hover": {
-      borderColor: "rgba(79, 209, 197, 0.35)",
+      borderColor: "rgba(245, 185, 66, 0.35)",
     },
   }),
   cardFeatured: css({
-    borderColor: "rgba(79, 209, 197, 0.35)",
+    borderColor: "rgba(245, 185, 66, 0.35)",
     borderLeft: `3px solid ${theme.colors.accent}`,
     background:
-      "linear-gradient(160deg, rgba(79, 209, 197, 0.06) 0%, rgba(0, 0, 0, 1) 55%)",
+      "linear-gradient(160deg, rgba(245, 185, 66, 0.06) 0%, rgba(0, 0, 0, 1) 55%)",
   }),
   companyRow: css({
     display: "flex",
@@ -79,7 +79,7 @@ const styles = {
     letterSpacing: "0.12em",
     textTransform: "uppercase",
     color: theme.colors.accent,
-    border: `1px solid rgba(79, 209, 197, 0.35)`,
+    border: `1px solid rgba(245, 185, 66, 0.35)`,
     borderRadius: 999,
     padding: "4px 10px",
   }),

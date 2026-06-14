@@ -47,7 +47,7 @@ const styles = {
   }),
 };
 
-const CAREER_START_YEAR = 2017;
+const YEARS_EXPERIENCE = 6;
 const JELD_WEN_PRODUCT_INITIATIVES = 3;
 const COUNT_UP_DURATION_MS = 1400;
 
@@ -57,10 +57,6 @@ type StatConfig = {
   suffix?: string;
   padStart?: number;
 };
-
-function getYearsExperience(startYear: number): number {
-  return new Date().getFullYear() - startYear;
-}
 
 function useCountUp(target: number, enabled: boolean, duration = COUNT_UP_DURATION_MS) {
   const [value, setValue] = useState(0);
@@ -183,7 +179,7 @@ const StatsBar = ({ projectCount }: Props) => {
   const stats: StatConfig[] = [
     {
       label: "Years experience",
-      target: getYearsExperience(CAREER_START_YEAR),
+      target: YEARS_EXPERIENCE,
       suffix: "+",
     },
     {

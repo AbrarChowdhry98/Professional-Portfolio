@@ -109,7 +109,7 @@ const styles = {
     transition: "transform 0.2s ease, box-shadow 0.2s ease",
     ":hover": {
       transform: "translateY(-2px)",
-      boxShadow: "0 12px 32px rgba(79, 209, 197, 0.25)",
+      boxShadow: "0 12px 32px rgba(245, 185, 66, 0.25)",
     },
   }),
   atSymbol: css({
@@ -165,7 +165,7 @@ const styles = {
     fontSize: 20,
     transition: "background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease",
     ":hover": {
-      backgroundColor: "rgba(79, 209, 197, 0.12)",
+      backgroundColor: "rgba(245, 185, 66, 0.12)",
       borderColor: theme.colors.accent,
       color: theme.colors.accent,
     },
