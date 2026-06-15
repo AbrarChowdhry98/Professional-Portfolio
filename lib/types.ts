@@ -16,6 +16,28 @@ export type ProjectCaseStudy = {
   outcomes: string[];
 };
 
+export type LighthouseScores = {
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+};
+
+export type LighthouseSnapshot = {
+  label: string;
+  title?: string;
+  url?: string;
+  image: string;
+  scores: LighthouseScores;
+};
+
+export type PerformanceComparison = {
+  heading?: string;
+  summary: string;
+  before: LighthouseSnapshot;
+  after: LighthouseSnapshot;
+};
+
 export type ProjectItem = {
   id: string;
   slug: string;
@@ -30,6 +52,7 @@ export type ProjectItem = {
   features?: ProjectFeature[];
   gallerySubtext?: string;
   caseStudy?: ProjectCaseStudy;
+  performanceComparison?: PerformanceComparison;
   spotlight?: {
     heading: string;
     text: string;

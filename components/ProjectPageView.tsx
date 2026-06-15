@@ -30,6 +30,7 @@ import { theme } from "@/lib/theme";
 import { Breakpoints } from "@/lib/utils/breakpoints";
 import { AppGallerySection } from "./AppScreenshotGallery";
 import Footer from "./Footer";
+import PerformanceComparisonSection from "./PerformanceComparisonSection";
 
 const styles = {
   page: css({
@@ -866,6 +867,14 @@ const ProjectPageView = ({
           </div>
         </div>
       </section>
+
+      {project.performanceComparison && (
+        <div css={styles.section}>
+          <PerformanceComparisonSection
+            comparison={project.performanceComparison}
+          />
+        </div>
+      )}
 
       <section css={styles.section}>
         <div css={styles.scalability}>

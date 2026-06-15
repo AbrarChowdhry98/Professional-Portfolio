@@ -263,23 +263,54 @@ const projects: ProjectItem[] = [
         "Led product and technical direction for the public website — scoping stack migration work, performance priorities, and interactive tools with cross-functional partners.",
       outcomes: [
         "Migrated to a headless Sitecore XM Cloud + Next.js architecture with GraphQL-driven content",
-        "Improved front-end performance across key templates and high-traffic user flows",
+        "Raised Lighthouse performance from 34 on staging to 84 in production — plus gains in Best Practices (69 → 92) and SEO (85 → 92)",
         "Shipped product listings, dealer locator, document libraries, multisite config, and an integrated chatbot",
       ],
+    },
+    performanceComparison: {
+      heading: "Performance Improvement",
+      summary:
+        "Led front-end and platform optimizations across the Sitecore XM Cloud + Next.js migration — improving Lighthouse performance from 34 on staging to 84 in production while lifting Best Practices and SEO scores across the board.",
+      before: {
+        label: "Before · Staging",
+        title: "Pre-migration staging build",
+        url: "qa-jeld-wen.vercel.app/en-ca",
+        image:
+          "/projects/jeld-wen-website/lighthouse-staging-before.jpg",
+        scores: {
+          performance: 34,
+          accessibility: 91,
+          bestPractices: 69,
+          seo: 85,
+        },
+      },
+      after: {
+        label: "After · Production",
+        title: "Live production site",
+        url: "www.jeld-wen.ca/en-ca",
+        image:
+          "/projects/jeld-wen-website/lighthouse-production-after.jpg",
+        scores: {
+          performance: 84,
+          accessibility: 91,
+          bestPractices: 92,
+          seo: 92,
+        },
+      },
     },
     image: "/projects/jeld-wen-website/homepage.png",
     keywords: ["Next.js", "React", "TypeScript", "Sitecore", "GraphQL", "SCSS"],
     link: "https://www.jeld-wen.ca/en-ca/",
     rank: 3,
     highlights: {
-      primary: { value: "Sitecore XM Cloud", label: "CMS Platform" },
+      primary: { value: "84", label: "Lighthouse Performance" },
       secondary: { value: "Next.js", label: "Front End" },
     },
     features: [
       {
         title: "Performance Optimization",
         description:
-          "Prioritized and delivered front-end performance gains across key templates and high-traffic journeys.",
+          "Improved Lighthouse performance from 34 on staging to 84 in production through front-end tuning, template optimization, and platform migration work.",
       },
       {
         title: "Interactive Tools",
