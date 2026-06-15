@@ -10,8 +10,8 @@ import {
   getBanner,
   getContactInformation,
   getExperience,
+  getFlagshipProjects,
   getProfilePictureUrl,
-  getProjects,
 } from "@/lib/contentful";
 
 export default async function HomePage() {
@@ -19,7 +19,7 @@ export default async function HomePage() {
     await Promise.all([
       getBanner(),
       getContactInformation(),
-      getProjects(),
+      getFlagshipProjects(),
       getExperience(),
       getProfilePictureUrl(),
     ]);
@@ -31,15 +31,15 @@ export default async function HomePage() {
 
       <SectionPreview
         title="Experience"
-        description="From digital marketing and business development to leading product delivery at JELD-WEN Canada."
+        description="From digital marketing and channel operations to owning product delivery — apps, web platforms, and retail partnerships at JELD-WEN Canada."
         href="/experience"
       >
-        <Experience experience={experience} limit={1} highlightLimit={2} />
+        <Experience experience={experience} limit={1} highlightLimit={3} />
       </SectionPreview>
 
       <SectionPreview
         title="Projects"
-        description="Native iOS apps, the Canadian web platform, and selected full-stack work."
+        description="Flagship product work — iOS apps, the Canada website, and Home Depot Canada channel growth."
         href="/work"
       >
         <Projects projects={projects} limit={4} />

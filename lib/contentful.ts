@@ -13,7 +13,7 @@ const banner: BannerContent = {
     "Retail Marketing Specialist at JELD-WEN Canada, working toward an Associate Product Line Manager role while leading digital product initiatives — from native iOS sales and customer apps to the Canada web platform.",
   subHeadingLevel: 4 as HeadingLevel,
   navText:
-    "I bridge marketing strategy, product thinking, and hands-on delivery — defining what gets built, why it matters, and how it reaches sales teams and customers. This portfolio showcases the work behind that path.",
+    "I bridge product strategy, cross-functional delivery, and hands-on execution — defining what gets built, prioritizing with stakeholders, and measuring impact across retail channels, mobile apps, and enterprise web platforms.",
 };
 
 const socialLinks: SocialLinkItem[] = [
@@ -56,7 +56,18 @@ const projects: ProjectItem[] = [
     slug: "jwoc-sales-hub",
     title: "JW Sales Hub",
     description:
-      "A native iOS app for JELD-WEN Canada sales representatives — built to support reps in the field with quoting, networking, lead generation, and immersive product demos.\n\nStandout features include an interior door quoting tool, a digital business card shareable by email, text, or AirDrop, an event lead capture form for trade shows, and VR experiences for showcasing products in the field. The app also bundles product specs, literature, Quick Quote release notes, configurators, and an interactive chatbot — with Firebase authentication and offline support for company users.",
+      "Field sales reps needed a single mobile experience for quoting, product education, and lead capture — not a patchwork of PDFs, email attachments, and disconnected tools.\n\nI defined requirements and prioritized releases for a native iOS sales hub — quoting, digital business cards, trade show lead capture, VR demos, and offline product resources — partnering with sales leadership and engineering on what shipped first.",
+    caseStudy: {
+      problem:
+        "JELD-WEN Canada field reps lacked one trusted mobile tool for quoting, networking, and product demos — slowing conversations at dealers and trade shows.",
+      role:
+        "Product owner for feature prioritization, requirements, and release planning across sales, marketing, and engineering stakeholders.",
+      outcomes: [
+        "Shipped interior door quoting, digital business cards, event lead capture, and VR demos in a single app",
+        "Unified product specs, configurators, literature, and an AI chatbot for reps in the field",
+        "Delivered Firebase-authenticated, offline-first access for company users on the App Store",
+      ],
+    },
     image: "/projects/jw-sales-hub/home.png",
     imageMode: "app",
     keywords: [
@@ -74,7 +85,7 @@ const projects: ProjectItem[] = [
       "Quoting, networking, lead capture, and VR demos — plus the product tools reps need in the field.",
     spotlight: {
       heading: "Built for the Field",
-      text: "Standout features include an interior door quoting tool, a digital business card shareable by email, text, or AirDrop, an event lead capture form for trade shows, and VR experiences for showcasing products on site. The app also bundles product specs, literature, Quick Quote release notes, configurators, and an interactive chatbot — with Firebase authentication and offline support for company users.",
+      text: "Prioritized and shipped the capabilities reps asked for first — quoting on site, instant business card sharing, trade show lead capture, and VR demos — then layered in specs, configurators, literature, and chatbot support in one offline-ready hub.",
     },
     highlights: {
       primary: { value: "Firebase", label: "Authentication" },
@@ -151,7 +162,18 @@ const projects: ProjectItem[] = [
     slug: "windows-and-doors",
     title: "JELD-WEN of Canada",
     description:
-      "A customer-facing iOS app for JELD-WEN Canada that puts product discovery, literature, and support tools in one polished mobile experience.\n\nFeatures include bilingual support (English/French), product configurators, 360° spin views, Quick Quote release notes, an intent-based chatbot, offline media downloads, and in-app access to dealer locator and customer project tools.",
+      "Homeowners and dealers needed a simpler way to explore windows and doors, compare options, and find support — without navigating a fragmented web experience on mobile.\n\nI shaped the product direction for a customer-facing iOS app with bilingual discovery, configurators, offline resources, and self-serve support — balancing homeowner and dealer needs across the Canadian market.",
+    caseStudy: {
+      problem:
+        "Customers and dealers struggled to explore JELD-WEN's product catalog and support resources on mobile — creating friction in discovery and dealer lookup.",
+      role:
+        "Defined feature scope and user journeys for a public-facing app — prioritizing configurators, bilingual support, and self-serve tools with marketing and sales input.",
+      outcomes: [
+        "Launched bilingual (English/French) product discovery with configurators and 360° spin views",
+        "Added offline media downloads, warranty resources, and an intent-based chatbot for common questions",
+        "Connected dealer locator and project inspiration tools in one App Store presence",
+      ],
+    },
     image: "/projects/jeld-wen-of-canada/home.png",
     imageMode: "app",
     keywords: ["SwiftUI", "iOS", "Localization", "PDFKit", "AVKit", "Chatbot"],
@@ -161,7 +183,7 @@ const projects: ProjectItem[] = [
       "Product discovery, configurators, resources, and support — designed for homeowners and dealers across Canada.",
     spotlight: {
       heading: "Designed for Customers",
-      text: "Built for homeowners, dealers, and anyone exploring JELD-WEN windows and doors in Canada — with bilingual support, product configurators, offline media, an AI chatbot for common questions, and tools to find a dealer or browse project inspiration.",
+      text: "Scoped and delivered a customer app around real discovery journeys — bilingual browsing, configurators, offline resources, dealer lookup, and self-serve support — so homeowners and dealers could explore JELD-WEN products without friction on mobile.",
     },
     highlights: {
       primary: { value: "English / French", label: "Localization" },
@@ -233,7 +255,18 @@ const projects: ProjectItem[] = [
     slug: "jeld-wen-website",
     title: "JELD-WEN Canada Website",
     description:
-      "Enterprise marketing and commerce platform for JELD-WEN Canada, built on Sitecore XM Cloud with a Next.js front end.\n\nWork spans product and store listings, blog and document libraries, gallery and video listings, dealer locator maps, multisite configuration, CI/CD pipelines, performance improvements, and interactive tools like a chatbot — plus ongoing front-end enhancements across the Canadian digital presence.",
+      "The Canadian digital presence needed a faster, more maintainable platform that could scale product content, dealer tools, and marketing pages without slowing down the team.\n\nI prioritized platform upgrades and high-traffic experience improvements on Sitecore XM Cloud with a Next.js front end — balancing performance, merchandising needs, and long-term maintainability with IT and marketing stakeholders.",
+    caseStudy: {
+      problem:
+        "Legacy templates and stack constraints limited page speed, content agility, and the team's ability to ship improvements across product, dealer, and marketing journeys.",
+      role:
+        "Led product and technical direction for the public website — scoping stack migration work, performance priorities, and interactive tools with cross-functional partners.",
+      outcomes: [
+        "Migrated to a headless Sitecore XM Cloud + Next.js architecture with GraphQL-driven content",
+        "Improved front-end performance across key templates and high-traffic user flows",
+        "Shipped product listings, dealer locator, document libraries, multisite config, and an integrated chatbot",
+      ],
+    },
     image: "/projects/jeld-wen-website/homepage.png",
     keywords: ["Next.js", "React", "TypeScript", "Sitecore", "GraphQL", "SCSS"],
     link: "https://www.jeld-wen.ca/en-ca/",
@@ -246,7 +279,7 @@ const projects: ProjectItem[] = [
       {
         title: "Performance Optimization",
         description:
-          "Improved front-end performance and page speed across key templates and high-traffic user flows.",
+          "Prioritized and delivered front-end performance gains across key templates and high-traffic journeys.",
       },
       {
         title: "Interactive Tools",
@@ -266,6 +299,61 @@ const projects: ProjectItem[] = [
     ],
   },
   {
+    id: "home-depot-canada-channel",
+    slug: "home-depot-canada-channel",
+    title: "Home Depot Canada Channel",
+    description:
+      "Owned JELD-WEN's retail and e-commerce presence on Home Depot Canada — scaling the digital catalog, onboarding new product lines, and maintaining merchandising across online and in-store channels.\n\nLed launches for flagship products including JWC8500 Windows, JWC7500 Windows, Tri-Pane Patio Doors, and Easy In Interior Doors while growing active SKU coverage from roughly 500 to 2,000+ over two years.",
+    image: "/projects/home-depot-canada-channel.png",
+    keywords: [
+      "E-Commerce",
+      "Retail Channel",
+      "Product Onboarding",
+      "Merchandising",
+      "SKU Management",
+    ],
+    link: "https://www.homedepot.ca/",
+    rank: 4,
+    featured: true,
+    highlights: {
+      primary: { value: "2,000+", label: "SKUs Live" },
+      secondary: { value: "20% YOY", label: "Online Sales Growth" },
+    },
+    caseStudy: {
+      problem:
+        "JELD-WEN's Home Depot Canada assortment was under-represented online and in retail, limiting discoverability for key window and door lines at Canada's largest home improvement retailer.",
+      role:
+        "Owned channel strategy, product onboarding, and catalog maintenance — coordinating with merchandising, marketing, and retail partners to prioritize launches and keep product data accurate across channels.",
+      outcomes: [
+        "Grew live SKU coverage from ~500 to 2,000+ over two years",
+        "Launched flagship lines including JWC8500 Windows, JWC7500 Windows, Tri-Pane Patio Doors, and Easy In Interior Doors",
+        "Contributed to 20% year-over-year growth in online sales through expanded assortment and improved channel execution",
+      ],
+    },
+    features: [
+      {
+        title: "Product Onboarding",
+        description:
+          "End-to-end launch process for new SKUs — product data, imagery, specifications, and retail-ready merchandising assets.",
+      },
+      {
+        title: "Catalog Maintenance",
+        description:
+          "Ongoing updates to pricing, availability, product copy, and digital shelf content across the online channel.",
+      },
+      {
+        title: "Flagship Launches",
+        description:
+          "Coordinated go-to-market for priority window and door lines including JWC8500, JWC7500, Tri-Pane Patio Doors, and Easy In Interior Doors.",
+      },
+      {
+        title: "Cross-Channel Merchandising",
+        description:
+          "Aligned e-commerce listings with in-store retail presence so customers could discover JELD-WEN products consistently.",
+      },
+    ],
+  },
+  {
     id: "budget-tracker",
     slug: "budget-tracker",
     title: "Budget Tracker",
@@ -274,7 +362,8 @@ const projects: ProjectItem[] = [
     image: "/projects/Abrar-Budget-Tracker.png",
     keywords: ["JavaScript", "HTML", "CSS", "Local Storage"],
     link: "https://github.com/AbrarChowdhry98/Abrar-Budget-Tracker",
-    rank: 4,
+    rank: 5,
+    featured: false,
   },
   {
     id: "note-taker",
@@ -285,7 +374,8 @@ const projects: ProjectItem[] = [
     image: "/projects/abrar-note-Taker.png",
     keywords: ["Express", "Node.js", "REST", "JavaScript"],
     link: "https://github.com/AbrarChowdhry98/abrar-note-Taker",
-    rank: 5,
+    rank: 6,
+    featured: false,
   },
   {
     id: "weather-dashboard",
@@ -296,7 +386,8 @@ const projects: ProjectItem[] = [
     image: "/projects/Abrars-Weather-Dashboard.png",
     keywords: ["JavaScript", "OpenWeather API", "Bootstrap", "HTML"],
     link: "https://github.com/AbrarChowdhry98/Abrars-Weather-Dashboard",
-    rank: 6,
+    rank: 7,
+    featured: false,
   },
   {
     id: "code-quiz",
@@ -307,7 +398,8 @@ const projects: ProjectItem[] = [
     image: "/projects/Code-Quiz.png",
     keywords: ["JavaScript", "HTML", "CSS", "Quiz"],
     link: "https://github.com/AbrarChowdhry98/Code-Quiz",
-    rank: 7,
+    rank: 8,
+    featured: false,
   },
   {
     id: "password-generator",
@@ -318,7 +410,8 @@ const projects: ProjectItem[] = [
     image: "/projects/A-C-Password-Generator.png",
     keywords: ["JavaScript", "HTML", "CSS", "Security"],
     link: "https://github.com/AbrarChowdhry98/A-C-Password-Generator",
-    rank: 8,
+    rank: 9,
+    featured: false,
   },
   {
     id: "team-profile-generator",
@@ -329,7 +422,8 @@ const projects: ProjectItem[] = [
     image: "/projects/abrar-team-profile-generator.png",
     keywords: ["Node.js", "Inquirer", "HTML", "CLI"],
     link: "https://github.com/AbrarChowdhry98/abrar-team-profile-generator",
-    rank: 9,
+    rank: 10,
+    featured: false,
   },
   {
     id: "code-refactor",
@@ -340,7 +434,8 @@ const projects: ProjectItem[] = [
     image: "/projects/Code-Refactor.png",
     keywords: ["HTML", "CSS", "SEO", "Accessibility"],
     link: "https://github.com/AbrarChowdhry98/Code-Refactor",
-    rank: 10,
+    rank: 11,
+    featured: false,
   },
   {
     id: "readme-generator",
@@ -351,7 +446,8 @@ const projects: ProjectItem[] = [
     image: "/projects/Professional-Readme-Generator.png",
     keywords: ["Node.js", "Inquirer", "Markdown", "CLI"],
     link: "https://github.com/AbrarChowdhry98/Professional-Readme-Generator",
-    rank: 11,
+    rank: 12,
+    featured: false,
   },
 ];
 
@@ -368,10 +464,11 @@ const experience: ExperienceItem[] = [
         period: "Jan 2024 - Present",
         duration: "2 yrs 6 mos",
         highlights: [
-          "Designed, developed, and maintained the company website and digital platforms — coding front-end components and leading stack upgrades for performance, scalability, and long-term maintainability.",
-          "Built and optimized digital experiences across the public website and internal mobile apps, supporting sales enablement, product education, and customer engagement.",
-          "Created and managed digital content and marketing assets for web and in-store use, ensuring brand consistency and strong customer touchpoints.",
-          "Collaborated with sales, IT, product, and retail teams to align digital initiatives with business and merchandising goals.",
+          "Own digital product direction across two native iOS apps and the Canada website — prioritizing roadmaps, requirements, and releases with sales, IT, merchandising, and retail stakeholders.",
+          "Led Home Depot Canada channel growth: onboarded 2,000+ SKUs (from ~500) over two years, launching flagship lines including JWC8500 Windows, JWC7500 Windows, Tri-Pane Patio Doors, and Easy In Interior Doors — contributing to 20% year-over-year online sales growth.",
+          "Defined feature scope and success criteria for field sales tools (quoting, lead capture, VR demos) and customer-facing discovery experiences (configurators, bilingual support, chatbot).",
+          "Drove platform performance and maintainability — leading Sitecore XM Cloud / Next.js stack upgrades, CI/CD improvements, and front-end optimization across high-traffic journeys.",
+          "Created and managed digital content and marketing assets in Adobe Illustrator and Photoshop for web, in-store, and retail partner channels.",
         ],
       },
     ],
@@ -473,6 +570,11 @@ export async function getExperience(): Promise<ExperienceItem[]> {
 
 export async function getProjects(): Promise<ProjectItem[]> {
   return [...projects].sort((a, b) => (a.rank ?? 0) - (b.rank ?? 0));
+}
+
+export async function getFlagshipProjects(): Promise<ProjectItem[]> {
+  const sorted = await getProjects();
+  return sorted.filter((project) => project.featured !== false);
 }
 
 export async function getProjectBySlug(

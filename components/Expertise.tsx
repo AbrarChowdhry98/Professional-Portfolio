@@ -6,7 +6,9 @@ import { css } from "@emotion/react";
 import { useMemo } from "react";
 import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
+import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import SpeedOutlinedIcon from "@mui/icons-material/SpeedOutlined";
+import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import WebOutlinedIcon from "@mui/icons-material/WebOutlined";
 import { ProjectItem } from "@/lib/types";
 import { theme } from "@/lib/theme";
@@ -112,8 +114,10 @@ const styles = {
 
 const skillBars = [
   { name: "Product Strategy & Go-to-Market", value: 88 },
+  { name: "Digital Design & Creative Production", value: 86 },
   { name: "Technical Product Delivery", value: 85 },
   { name: "Digital Marketing & Analytics", value: 82 },
+  { name: "Competitive Intelligence & Price Positioning", value: 80 },
 ];
 
 const expertiseCards = [
@@ -140,6 +144,18 @@ const expertiseCards = [
     title: "Product Marketing",
     description:
       "Campaign planning, positioning, launch support, and analytics-driven growth.",
+  },
+  {
+    icon: PaletteOutlinedIcon,
+    title: "Adobe Creative",
+    description:
+      "Illustrator and Photoshop for marketing assets, product visuals, and brand-ready creative.",
+  },
+  {
+    icon: StorefrontOutlinedIcon,
+    title: "E-Commerce Operations",
+    description:
+      "Scaled JELD-WEN's Home Depot Canada channel from ~500 to 2,000+ SKUs — onboarding flagship window and door lines and driving 20% YOY online sales growth.",
   },
 ];
 
@@ -179,8 +195,9 @@ const Expertise = ({ projects, preview = false, embedded = false }: Props) => {
               <h2 css={styles.heading}>Skills & Expertise</h2>
               <p css={styles.description}>
                 A blend of product thinking, marketing strategy, and hands-on
-                delivery — from defining digital product direction to shipping
-                mobile apps and enterprise web platforms at JELD-WEN.
+                delivery — from Adobe creative work and e-commerce operations
+                at Home Depot Canada to shipping mobile apps and enterprise web
+                platforms at JELD-WEN.
                 {keywordSummary && (
                   <>
                     {" "}
@@ -200,8 +217,8 @@ const Expertise = ({ projects, preview = false, embedded = false }: Props) => {
           {preview && (
             <p css={css([styles.description, { marginBottom: 36 }])}>
               Product strategy, technical delivery, and digital marketing — with
-              hands-on work across Sitecore, Next.js, SwiftUI, and the MERN
-              stack.
+              hands-on work across Illustrator, Photoshop, Home Depot Canada's
+              online channel, Sitecore, Next.js, SwiftUI, and the MERN stack.
             </p>
           )}
 

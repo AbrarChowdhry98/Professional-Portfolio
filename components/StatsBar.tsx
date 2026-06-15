@@ -48,7 +48,7 @@ const styles = {
 };
 
 const YEARS_EXPERIENCE = 6;
-const JELD_WEN_PRODUCT_INITIATIVES = 3;
+const JELD_WEN_PRODUCT_INITIATIVES = 4;
 const COUNT_UP_DURATION_MS = 1400;
 
 type StatConfig = {
@@ -183,9 +183,8 @@ const StatsBar = ({ projectCount }: Props) => {
       suffix: "+",
     },
     {
-      label: "Projects shipped",
+      label: "Flagship products",
       target: projectCount,
-      padStart: 2,
     },
     {
       label: "JELD-WEN product initiatives",

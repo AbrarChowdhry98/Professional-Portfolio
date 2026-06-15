@@ -6,6 +6,9 @@ import { ComponentType } from "react";
 import { css } from "@emotion/react";
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import Link from "next/link";
+import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
+import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
@@ -167,6 +170,57 @@ const styles = {
       gridTemplateColumns: "1fr",
       gap: 40,
     },
+  }),
+  caseStudy: css({
+    paddingTop: 48,
+    paddingBottom: 48,
+    borderTop: `1px solid ${theme.colors.border}`,
+  }),
+  caseStudyGrid: css({
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: 20,
+    [Breakpoints.md]: {
+      gridTemplateColumns: "1fr",
+    },
+  }),
+  caseStudyCard: css({
+    backgroundColor: theme.colors.bg,
+    border: `1px solid ${theme.colors.border}`,
+    borderRadius: 8,
+    padding: 24,
+    textAlign: "left",
+  }),
+  caseStudyIcon: css({
+    color: theme.colors.accent,
+    fontSize: 22,
+    marginBottom: 14,
+  }),
+  caseStudyTitle: css({
+    fontSize: 11,
+    fontWeight: 700,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: theme.colors.text,
+    marginBottom: 12,
+  }),
+  caseStudyText: css({
+    fontSize: 13,
+    lineHeight: 1.75,
+    color: theme.colors.textMuted,
+    margin: 0,
+  }),
+  caseStudyList: css({
+    margin: 0,
+    paddingLeft: 18,
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+  }),
+  caseStudyListItem: css({
+    fontSize: 13,
+    lineHeight: 1.65,
+    color: theme.colors.textMuted,
   }),
   sectionLabel: css({
     display: "flex",
@@ -718,6 +772,34 @@ const ProjectPageView = ({
           </>
         )}
       </section>
+
+      {project.caseStudy && (
+        <section css={css([styles.section, styles.caseStudy])}>
+          <div css={styles.caseStudyGrid}>
+            <div css={styles.caseStudyCard}>
+              <FlagOutlinedIcon css={styles.caseStudyIcon} />
+              <div css={styles.caseStudyTitle}>Problem</div>
+              <p css={styles.caseStudyText}>{project.caseStudy.problem}</p>
+            </div>
+            <div css={styles.caseStudyCard}>
+              <PersonOutlineOutlinedIcon css={styles.caseStudyIcon} />
+              <div css={styles.caseStudyTitle}>My Role</div>
+              <p css={styles.caseStudyText}>{project.caseStudy.role}</p>
+            </div>
+            <div css={styles.caseStudyCard}>
+              <InsightsOutlinedIcon css={styles.caseStudyIcon} />
+              <div css={styles.caseStudyTitle}>Outcomes</div>
+              <ul css={styles.caseStudyList}>
+                {project.caseStudy.outcomes.map((outcome) => (
+                  <li key={outcome} css={styles.caseStudyListItem}>
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section css={css([styles.section, styles.twoCol])}>
         <div>

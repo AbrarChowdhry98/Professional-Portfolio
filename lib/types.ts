@@ -10,6 +10,12 @@ export type ProjectFeature = {
   description: string;
 };
 
+export type ProjectCaseStudy = {
+  problem: string;
+  role: string;
+  outcomes: string[];
+};
+
 export type ProjectItem = {
   id: string;
   slug: string;
@@ -19,9 +25,11 @@ export type ProjectItem = {
   keywords?: string[];
   link?: string;
   rank?: number;
+  featured?: boolean;
   gallery?: ProjectGalleryItem[];
   features?: ProjectFeature[];
   gallerySubtext?: string;
+  caseStudy?: ProjectCaseStudy;
   spotlight?: {
     heading: string;
     text: string;

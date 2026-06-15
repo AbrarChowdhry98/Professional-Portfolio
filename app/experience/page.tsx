@@ -13,7 +13,7 @@ export default async function ExperiencePage() {
     <>
       <PageShell
         title="Experience"
-        description="A progression from digital marketing and business development into product-led delivery — owning web platforms, mobile apps, and the marketing systems that support them at scale."
+        description="A progression from digital marketing and retail channel operations into product-led delivery — owning roadmaps, releases, and measurable growth across apps, web platforms, and partner channels."
       >
         <Experience experience={experience} />
       </PageShell>
